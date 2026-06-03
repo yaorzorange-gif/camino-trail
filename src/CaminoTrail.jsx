@@ -140,31 +140,9 @@ function makeAvatar(name, hue) {
 }
 
 // ─── Seed data ────────────────────────────────────────────────────────────────
-const SEED_PILGRIMS = [
-  {id:"p1", name:"María",   species:"butterfly", meetTown:"Roncesvalles",           day:1,  word:"Letting go of everything I carried", contactType:"Instagram", contact:"@maria.camino",    date:"Jun 6",  photo:makeAvatar("María",  22)},
-  {id:"p2", name:"Thomas",  species:"oak",       meetTown:"Pamplona",               day:3,  word:"Third time on this road",           contactType:"Email",     contact:"thomas@wander.de", date:"Jun 8",  photo:makeAvatar("Thomas",200)},
-  {id:"p3", name:"Yuki",    species:"firefly",   meetTown:"Logroño",                day:7,  word:"One step, then another",            contactType:"小红书 RED", contact:"yuki_walks",       date:"Jun 11", photo:makeAvatar("Yuki",  160)},
-  {id:"p4", name:"Sofía",   species:"wolf",      meetTown:"Burgos",                 day:12, word:"",                                  contactType:"WhatsApp",  contact:"+34 612 xxx",      date:"Jun 15", photo:makeAvatar("Sofía", 280)},
-  {id:"p5", name:"Kofi",    species:"stone",     meetTown:"León",                   day:19, word:"I carry my village with me",        contactType:"Instagram", contact:"@kofi.steps",      date:"Jun 19", photo:makeAvatar("Kofi",   38)},
-  {id:"p6", name:"Lena",    species:"deer",      meetTown:"Pamplona",               day:3,  word:"First pilgrimage, last fear",       contactType:"Email",     contact:"lena@berlin.net",  date:"Jun 8",  photo:null},
-  {id:"p7", name:"Ryo",     species:"compass",   meetTown:"Burgos",                 day:12, word:"North is wherever I am",            contactType:"",          contact:"",                 date:"Jun 15", photo:makeAvatar("Ryo",   240)},
-  {id:"p8", name:"Amara",   species:"willow",    meetTown:"Astorga",                day:21, word:"The road teaches what books cannot",contactType:"小红书 RED", contact:"amara_野",         date:"Jun 22", photo:makeAvatar("Amara", 120)},
-  {id:"p9", name:"Dimitri", species:"crow",      meetTown:"Sarria",                 day:28, word:"",                                  contactType:"Instagram", contact:"@d.crow",          date:"Jul 1",  photo:null},
-  {id:"p10",name:"Ingrid",  species:"feather",   meetTown:"O Cebreiro",             day:26, word:"Lighter every day",                 contactType:"Email",     contact:"ingrid@se.io",     date:"Jun 28", photo:makeAvatar("Ingrid", 60)},
-  {id:"p11",name:"Carlos",  species:"bee",       meetTown:"Estella",                day:5,  word:"Buen Camino to all",                contactType:"Instagram", contact:"@carlos.bee",      date:"Jun 9",  photo:makeAvatar("Carlos", 55)},
-  {id:"p12",name:"Hana",    species:"heron",     meetTown:"Santo Domingo",          day:9,  word:"Silence is the real language here", contactType:"Email",     contact:"hana@jp.net",      date:"Jun 13", photo:makeAvatar("Hana",  300)},
-];
+const SEED_PILGRIMS = [];
 
-const SEED_PEER_EDGES = [
-  {id:"e_p1_p2",  source:"p1",  target:"p2"},
-  {id:"e_p2_p6",  source:"p2",  target:"p6"},
-  {id:"e_p3_p4",  source:"p3",  target:"p4"},
-  {id:"e_p4_p7",  source:"p4",  target:"p7"},
-  {id:"e_p5_p8",  source:"p5",  target:"p8"},
-  {id:"e_p9_p10", source:"p9",  target:"p10"},
-  {id:"e_p3_p9",  source:"p3",  target:"p9"},
-  {id:"e_p11_p12",source:"p11", target:"p12"},
-];
+const SEED_PEER_EDGES = [];
 
 // ─── Main ─────────────────────────────────────────────────────────────────────
 export default function CaminoTrail() {
@@ -601,7 +579,7 @@ function TrailView({ pilgrims, peerEdges, selected, setSelected, selPeerIds, get
         background:"rgba(255,255,255,0.01)",
       }}>
         {[
-          {label:"Pilgrims",  val:SEED_PILGRIMS.length},
+          {label:"Pilgrims",  val:pilgrims.length},
           {label:"Days",      val:"35"},
           {label:"km",        val:"790"},
           {label:"Towns",     val:TOWNS.length},
